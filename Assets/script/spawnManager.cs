@@ -35,4 +35,7 @@ public class spawnManager : MonoBehaviour
 
         return new Vector3(spawnX, spawnY, spawnZ);
     }
+
+    
+
 }
