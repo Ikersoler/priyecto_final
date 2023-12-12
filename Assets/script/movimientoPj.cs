@@ -26,8 +26,11 @@ public class movimientoPj : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical"); 
 
         
-        Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput) * moveSpeed * Time.deltaTime; 
-        Vector3 newPos = transform.position + movement;
+        
+            Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput) * moveSpeed * Time.deltaTime;
+            Vector3 newPos = transform.position + movement;
+        
+       
 
         
         newPos.x = Mathf.Clamp(newPos.x, -boundaryX, boundaryX);
