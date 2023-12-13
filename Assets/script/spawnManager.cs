@@ -7,14 +7,23 @@ public class spawnManager : MonoBehaviour
     public GameObject prefab1; 
     public GameObject prefab2; 
     public float spawnInterval = 2f;
-    
+    public movimientoPj ObjetosGameOver;
 
     void Start()
     {
-        
+        ObjetosGameOver = FindObjectOfType <movimientoPj>();
         InvokeRepeating("SpawnRandomPrefab", 0f, spawnInterval);
         
     }
+
+    private void Update()
+    {
+        if (ObjetosGameOver.isGameOver) 
+        {
+            CancelInvoke("SpawnRandomPrefab");
+        }
+    }
+
 
     void SpawnRandomPrefab()
     {
